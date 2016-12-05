@@ -86,7 +86,7 @@ class Parse:
 
     def folder_creations(self):
         try:
-            os.makedirs(self.keyword)
+            os.mkdir(self.keyword)
         except FileExistsError:
             pass
 
