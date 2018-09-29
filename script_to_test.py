@@ -20,7 +20,7 @@ class Parse:
         self.absolute_link = []
         self.count = 0
 
-    def input_arg_parse(self):
+    def input_args_to_parse(self):
         a_parser = argparse.ArgumentParser(description="Search of images using the keyword")
         a_parser.add_argument('keyword', help='The keyword for search')
         a_parser.add_argument('width', help='Minimum width of the image', type=int)
@@ -102,7 +102,7 @@ class TimeChecker(object):
 def run():
     with TimeChecker() as t:
         parser = Parse()
-        parser.input_arg_parse()
+        parser.input_args_to_parse()
         if not parser.parse(parser.get_url_content(parser.url_formation(parser.keyword), mode=0)):
             print("""References on your request is not found:(
             Try again:)""")
